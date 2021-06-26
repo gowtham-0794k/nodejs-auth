@@ -25,10 +25,10 @@ npm install
 Step 3: Put your credentials in the .env file.
 
 ```bash
-PORT=3000
-MONGODB_URI=mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false
-DB_NAME=spak_db
-ACCESS_TOKEN_SECRET=spak12345
+set PORT=3000
+set MONGODB_URI=mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false
+set DB_NAME=spak_db
+set ACCESS_TOKEN_SECRET=spak12345
 ```
 
 Step 4: Start the API by
