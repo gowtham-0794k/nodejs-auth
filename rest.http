@@ -1,0 +1,39 @@
+###Register Route
+POST http://localhost:3000/auth/signUp
+Content-Type: application/json
+db: spak_db
+
+{
+    "email":"gowtham03@gmail.com",
+    "password":"123456",
+    "name":"Gowtham 2",
+    "contact":"8867347441",
+    "address":"Bangalore",
+    "gender":"Male",
+    "country":"India"
+}
+
+###Login Route
+POST http://localhost:3000/auth/signIn
+Content-Type: application/json
+db: spak_db
+
+{
+    "email":"gowtham01@gmail.com",
+    "password":"123456"
+}
+
+###Logout Route
+DELETE http://localhost:3000/auth/logout
+Content-Type: application/json
+db: spak_db
+email: <your email>
+access_token:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTI5OTYxNjIsImV4cCI6MTU5Mjk5NjE3NywiYXVkIjoiNWVlYTBlOTlkMTU3ZjYzZjNlMzYxYjQxIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.fsED23a_2dINM1saPjmHkc_gVrsuptb1oSNh0GR-03M
+
+
+###Get User data Route
+GET http://localhost:3000/auth/getUserData/<user name>/<mobile number>
+Content-Type: application/json
+db: spak_db
+email: <your email>
+access_token:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTI5OTYxNjIsImV4cCI6MTU5Mjk5NjE3NywiYXVkIjoiNWVlYTBlOTlkMTU3ZjYzZjNlMzYxYjQxIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.fsED23a_2dINM1saPjmHkc_gVrsuptb1oSNh0GR-03M
