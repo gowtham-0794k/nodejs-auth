@@ -3,7 +3,6 @@ var _connection = null;
 var client;
 
 const url =
-  process.env.MONGODB_URI ||
   'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false';
 client = new MongoClient(url, {
   useNewUrlParser: true,

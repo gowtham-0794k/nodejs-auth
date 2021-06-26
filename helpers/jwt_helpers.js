@@ -5,7 +5,7 @@ module.exports = {
   signAccessToken: (userId) => {
     return new Promise((resolve, reject) => {
       const payload = {};
-      const secret = process.env.ACCESS_TOKEN_SECRET; // process.env.ACCESS_TOKEN_SECRET;
+      const secret = process.env.ACCESS_TOKEN_SECRET || '123';
       const options = {
         expiresIn: '1h',
         issuer: 'stak.com',
@@ -42,17 +42,21 @@ module.exports = {
       });
     const bearerToken = access_token.split(' ');
     const token = bearerToken[1];
-    JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {
-      if (err) {
-        const message =
-          err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.message;
-        return res.status(400).json({
-          code: 400,
-          error: message,
-        });
+    JWT.verify(
+      token,
+      process.env.ACCESS_TOKEN_SECRET || '123',
+      (err, payload) => {
+        if (err) {
+          const message =
+            err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.message;
+          return res.status(400).json({
+            code: 400,
+            error: message,
+          });
+        }
+        req.payload = payload;
+        next();
       }
-      req.payload = payload;
-      next();
-    });
+    );
   },
 };

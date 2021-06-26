@@ -52,7 +52,7 @@ app.use((error, req, res, next) => {
 });
 
 // Server Setup
-const port = process.env.PORT || 3000; // setup port #
+const port = 3000; // setup port #
 const server = http.createServer(app); // create server on + port routed to app
 server.listen(port); // server listening on port
 console.log('Server listening on:' + port); // show server is running in console
